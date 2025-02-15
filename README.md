@@ -1,6 +1,6 @@
 # Dicionário de Português
 
-[![Open in browser](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open in browser](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://dicio-pt.netlify.app/)
 
 > 📖 **Dicionário Português** is a extension for browser that helps you to find the meaning of words!
 

@@ -1,0 +1,82 @@
+---
+interface Props {
+	title?: string;
+}
+
+const { title = "Dicionário Português - O seu dicionário com super-poderes." } =
+	Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta
+			name="description"
+			content="Dicionário Português - O seu dicionário com super-poderes."
+		/>
+	</head>
+	<body>
+		<slot />
+		<footer>
+			<p>
+				&copy {new Date().getFullYear()}
+				<a href="https://github.com/martygo" target="_blank">Temte</a>. Todos os
+				direitos reservados.
+			</p>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: "Poppins", serif;
+		background: #fff;
+		color: #000;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		min-height: 100vh;
+	}
+
+	main {
+		min-height: 100vh;
+		font-family: "Poppins", serif;
+	}
+
+	footer {
+		background: #1d2a57;
+		border-top: 1px solid #e3e7eb;
+		text-align: center;
+		padding: 2rem 0;
+		color: #fff;
+	}
+
+	footer a {
+		font-weight: 500;
+		text-decoration: none;
+		color: #fff;
+	}
+
+	footer a:hover {
+		text-decoration: underline;
+	}
+</style>

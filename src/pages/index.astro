@@ -1,0 +1,232 @@
+---
+import { Image } from "astro:assets";
+import { CldVideoPlayer } from "astro-cloudinary";
+
+import Layout from "../layouts/Layout.astro";
+import logo from "../assets/logo.svg";
+---
+
+<Layout>
+	<main>
+		<div class="section-header">
+			<div class="logo">
+				<Image src={logo} alt="Mouse Dictionary Logo" width="80" height="80" />
+			</div>
+
+			<h1>Dicionário de Português</h1>
+			<p class="subtitle">Dicionário super rápido para aprender</p>
+
+			<div class="buttons">
+				<a href="#" class="button">Chrome</a>
+				<a href="#" class="button">Firefox</a>
+			</div>
+
+			<div class="divider"></div>
+
+			<div class="features">
+				<div class="feature-card">
+					<div class="icon">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="30"
+							height="30"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-wind"
+							><path d="M12.8 19.6A2 2 0 1 0 14 16H2"></path><path
+								d="M17.5 8a2.5 2.5 0 1 1 2 4H2"></path><path
+								d="M9.8 4.4A2 2 0 1 1 11 8H2"></path></svg
+						>
+					</div>
+					<h2>Super rápido</h2>
+					<p>Resultados instantâneos.</p>
+				</div>
+
+				<div class="feature-card">
+					<div class="icon">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="30"
+							height="30"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-lamp-floor"
+							><path d="M9 2h6l3 7H6l3-7Z"></path><path d="M12 9v13"
+							></path><path d="M9 22h6"></path></svg
+						>
+					</div>
+					<h2>Moderno</h2>
+					<p>Interface limpa e moderna.</p>
+				</div>
+
+				<div class="feature-card">
+					<div class="icon">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="30"
+							height="30"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-swatch-book"
+							><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"
+							></path><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"
+							></path><path d="M 7 17h.01"></path><path
+								d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"
+							></path></svg
+						>
+					</div>
+					<h2>Vocabulário geral</h2>
+					<p>Definições para todas as palavras.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="usage-example">
+			<h2>Demonstraçāo de uso</h2>
+			<div class="example-content">
+				<CldVideoPlayer
+					src="https://res.cloudinary.com/dhjeu9fdq/video/upload/v1739648937/h8cyojkkiuzqg2bifhdl.mp4"
+					width="400"
+					height="200"
+					controls={true}
+					autoPlay={true}
+					loop={true}
+					logo={false}
+					colors={{
+						accent: "#fff",
+						base: "#1d2a57",
+						text: "#fff",
+					}}
+				/>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.section-header {
+		position: relative;
+		background: #1d2a57;
+		color: white;
+		padding: 2rem 0;
+		text-align: center;
+	}
+
+	.divider {
+		background: rgba(255, 255, 255, 0.3);
+		height: 1px;
+		margin: 0 auto;
+		width: 80%;
+	}
+
+	.logo {
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		font-size: 2rem;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.subtitle {
+		font-size: 1rem;
+		margin: 0.5rem 0 2rem;
+	}
+
+	.buttons {
+		display: flex;
+		gap: 0.5rem;
+		justify-content: center;
+		margin: 2rem 0;
+	}
+
+	.button {
+		background: rgba(5, 128, 232, 0.4);
+		color: #fff;
+		padding: 0.75rem 2rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.button:hover {
+		opacity: 0.85;
+		transition: background 0.3s;
+	}
+
+	.features {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem 10rem 0 10rem;
+	}
+
+	.feature-card {
+		background: white;
+		padding: 2rem 0;
+		border-radius: 4px;
+		text-align: center;
+		color: #333;
+	}
+
+	.feature-card h2 {
+		color: #1d2a57;
+		margin: 0.5rem 0 0.5rem;
+		font-size: 1.2rem;
+	}
+
+	.feature-card p {
+		margin: 0;
+		color: #666;
+		font-size: 1rem;
+	}
+
+	.usage-example {
+		margin: 2rem auto;
+		margin-bottom: 2rem;
+		max-width: 880px;
+		padding: 2rem 0rem 0 0rem;
+		color: #333;
+	}
+
+	.usage-example h2 {
+		margin-top: 0;
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+
+	.example-content {
+		border: 1px solid #e3e7eb;
+		border-radius: 8px;
+	}
+
+	@media (max-width: 768px) {
+		.features {
+			grid-template-columns: 1fr;
+			padding: 2rem 1rem;
+		}
+
+		.feature-card {
+			padding: 2rem 0;
+		}
+
+		.usage-example {
+			margin: 2rem;
+		}
+	}
+</style>
